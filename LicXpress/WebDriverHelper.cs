@@ -1,13 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using System;
 
-public class WebDriverHelper
+internal class WebDriverHelper
 {
     private const int DEFAULT_WAIT_TIME = 10;
 
-    public static IWebDriver CreateChromeDriver()
+    internal static IWebDriver CreateChromeDriver()
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArguments("headless");
@@ -17,7 +16,7 @@ public class WebDriverHelper
         return new ChromeDriver(service, options);
     }
 
-    public static WebDriverWait GetWebDriverWait(IWebDriver driver, int seconds = DEFAULT_WAIT_TIME)
+    internal static WebDriverWait GetWebDriverWait(IWebDriver driver, int seconds = DEFAULT_WAIT_TIME)
     {
         return new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
     }

@@ -1,19 +1,16 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-using System;
-using System.Windows.Forms;
 
-public class NavigationManager
+internal class NavigationManager
 {
     private const string BASE_URL = "https://my.solidworks.com/xpress";
 
-    public static void NavigateToBaseURL(IWebDriver driver)
+    internal static void NavigateToBaseURL(IWebDriver driver)
     {
         driver.Navigate().GoToUrl(BASE_URL);
     }
 
-    public static void Login(IWebDriver driver)
+    internal static void Login(IWebDriver driver)
     {
         var credentials = CredentialsManager.ReadCredentials();
         string username = credentials.Item1;

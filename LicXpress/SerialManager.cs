@@ -1,12 +1,10 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-using System;
-using System.Windows.Forms;
 
-public class SerialManager
+internal class SerialManager
 {
-    public static void ExtractSerial(IWebDriver driver, string _serial, string _version, string _product)
+    internal static void ExtractSerial(IWebDriver driver, string _serial, string _version, string _product)
     {
         WebDriverWait waitSerial = WebDriverHelper.GetWebDriverWait(driver, 25);
         waitSerial.Until(ExpectedConditions.ElementIsVisible(By.Id("serial")));

@@ -1,10 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
-
-public class CredentialsManager
+﻿internal class CredentialsManager
 {
-    public static Tuple<string, string> ReadCredentials()
+    internal static Tuple<string, string> ReadCredentials()
     {
         try
         {
